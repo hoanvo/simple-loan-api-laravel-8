@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "97583ba6-854f-437b-9ecc-6ac642954dc2",
+		"name": "Simple Loan Api Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDU0NjE4NSwiZXhwIjoxNjM0NTQ5Nzg1LCJuYmYiOjE2MzQ1NDYxODUsImp0aSI6IjVxOVQ3N1ZnQnFoc21JOTYiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.X2hWIYxgkNmA3L_FkOwCuo1XKuRHtrI1IPoYtKJGAZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hoan Vo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "old_password",
+									"value": "secret",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "secret1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/change-pass",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"change-pass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDU0NTY1OSwiZXhwIjoxNjM0NTQ5MjU5LCJuYmYiOjE2MzQ1NDU2NTksImp0aSI6InFkUEhUZmhWY2R2eERUa0MiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ._CEjat_8C9rkyzz_qRTu3deuMf8EYtkk-q_of9mMb40",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDUyNTc3MiwiZXhwIjoxNjM0NTI5MzcyLCJuYmYiOjE2MzQ1MjU3NzIsImp0aSI6Im1mT0JTWjRtbjZzdVJ3U20iLCJzdWIiOjE4LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ruiDyyyuPI-zYmjqH2loNeIIp4AhEc0HJ9fbuhWO3yI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hoan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/user-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"user-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Loan Application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDU0NzcyNCwiZXhwIjoxNjM0NTUxMzI0LCJuYmYiOjE2MzQ1NDc3MjQsImp0aSI6IjcxeG1rbTFGOHZwOUNNbnUiLCJzdWIiOjEyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.q_6XCmL5w08JW2Y4Fa-fNWqXp4Hi-Scl6TXar83sMKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "interest_rate",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "term",
+									"value": "36",
+									"type": "text"
+								},
+								{
+									"key": "arrangement_fee",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "frequency",
+									"value": "weekly",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/users/12/loans",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"12",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "Get Loans By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDUzNTgxNiwiZXhwIjoxNjM0NTM5NDE2LCJuYmYiOjE2MzQ1MzU4MTYsImp0aSI6InozUmVhQjF3Yk5xTjFiSUkiLCJzdWIiOjE4LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.E3ZmJ19mUBDDEnhLx67rQ0A2LmxqLrTMZlKNSXUIUgI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/18/loans",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"18",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loans",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDU0NzcyNCwiZXhwIjoxNjM0NTUxMzI0LCJuYmYiOjE2MzQ1NDc3MjQsImp0aSI6IjcxeG1rbTFGOHZwOUNNbnUiLCJzdWIiOjEyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.q_6XCmL5w08JW2Y4Fa-fNWqXp4Hi-Scl6TXar83sMKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/loans",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loans Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDQzNTkzNywiZXhwIjoxNjM0NDM5NTM3LCJuYmYiOjE2MzQ0MzU5MzcsImp0aSI6InoyREhKcjU4RENIVnZuNEciLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ljMmF75WRcRDybHEloO0YOAKgysq--5n2_o5Dd7zfrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/loans/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"loans",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Repayment",
+			"item": [
+				{
+					"name": "Repayments For A Loan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDU0Njg1NywiZXhwIjoxNjM0NTUwNDU3LCJuYmYiOjE2MzQ1NDY4NTcsImp0aSI6IkFjbnV4NFZGOFNkc242TFQiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.BOmGZFJvLvMnQsSfekAf-ahUh5-DrDhkrkj9IjBgpTU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "payment_amount",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "payment_date",
+									"value": "2021-10-17",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/loans/7/repayments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"loans",
+								"7",
+								"repayments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Repayments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDQzNTkzNywiZXhwIjoxNjM0NDM5NTM3LCJuYmYiOjE2MzQ0MzU5MzcsImp0aSI6InoyREhKcjU4RENIVnZuNEciLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ljMmF75WRcRDybHEloO0YOAKgysq--5n2_o5Dd7zfrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/repayments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"repayments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Repayments Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNDQ0NDM0NywiZXhwIjoxNjM0NDQ3OTQ3LCJuYmYiOjE2MzQ0NDQzNDcsImp0aSI6Im1INXJuTVlBcVVGaDBTVVAiLCJzdWIiOjYxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.jypO4rl5hW1tqDIomAjrw4NvQofXAuirK9VgT8Ljv-4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/repayments/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"repayments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
